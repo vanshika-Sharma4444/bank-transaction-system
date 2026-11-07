@@ -1,0 +1,29 @@
+{
+  "name": "banktransaction",
+  "version": "1.0.0",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "node --test src/tests/transaction.integrity.test.js",
+    "server": "npx nodemon src/server.js",
+    "client": "npm run dev --prefix frontend",
+    "dev": "npx nodemon src/server.js",
+    "start": "node src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.9.5",
+    "nodemailer": "^10.0.12"
+  },
+  "devDependencies": {
+    "mongodb-memory-server": "^10.2.0"
+  }
+}
