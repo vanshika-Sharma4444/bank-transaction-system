@@ -1,16 +1,22 @@
+
 const path = require("path");
 
-require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
+require("dotenv").config({
+    path: path.resolve(__dirname, "../.env")
+});
 
 const app = require("./app");
 const connectDB = require("./config/db");
 
+const PORT = process.env.PORT || 3000;
+
 connectDB()
     .then(() => {
-        app.listen(3000, () => {
-            console.log("server is running on port 3000");
+        app.listen(PORT, () => {
+            console.log(`Server is running on port ${PORT}`);
         });
     })
-    .catch(() => {
-        process.exitCode = 1;
+    .catch((error) => {
+        console.error("Server startup failed:", error.message);
+        process.exit(1);
     });
